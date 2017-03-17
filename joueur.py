@@ -16,7 +16,7 @@ class Joueur:
         Args:
             nom (str): Le nom du joueur.
         """
-
+#lolxdrolf
 
     def jouer_tour(self, limite_lancers): # **** a completer ****
         """
