@@ -17,6 +17,7 @@ if __name__ == "__main__":
         nom = input("Entrez le nom du joueur {:d} ".format(i + 1))
         joueurs.append(Joueur(nom))
 
+
     continuer = True
     while continuer:
         partie = Partie(joueurs)

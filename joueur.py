@@ -16,8 +16,11 @@ class Joueur:
         Args:
             nom (str): Le nom du joueur.
         """
-#lolxdrolf
-#cacatest
+        self.nom = nom
+        self.nb_victorie = 0
+        self. nb_parties_jouees = 0
+
+
     def jouer_tour(self, limite_lancers): # **** a completer ****
         """
         Joue le tour d'un joueur.
@@ -27,6 +30,8 @@ class Joueur:
         Returns (Combinaison): La combinaison obtenue
 
         """
+        self.limite_lancers = limite_lancers
+
 
 
     def __str__(self): # **** a completer ****

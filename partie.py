@@ -16,7 +16,8 @@ class Partie:
         Args:
             joueurs (list): La liste des joueurs.
         """
-
+        self.joueurs = joueurs  #C'est une liste
+        print(type(self.joueurs))
 
     def jouer_partie(self): # **** a completer ****
         """ Joue une partie entre tous les joueurs et détermine le gagnant.
@@ -54,3 +55,5 @@ if __name__ == "__main__":
     assert 0 in ordre
     assert 1 in ordre
     assert 2 in ordre
+
+
