@@ -19,6 +19,8 @@ if __name__ == "__main__":
         joueurs.append(Joueur(nom))
 
 
+
+
     continuer = True
     while continuer:
         partie = Partie(joueurs)
@@ -33,3 +35,6 @@ if __name__ == "__main__":
         print("{} a gagné {:d} parties, soit {:.0f}%.".format(joueur,
                                                              joueur.nb_victoires,
                                                              joueur.nb_victoires / joueur.nb_parties_jouees * 100))
+
+
+

@@ -55,9 +55,6 @@ class Combinaison:
             n (int): Le nombre de dés à lancer.
         """
 
-        self.resultat = []
-        for i in range(n):
-            self.resultat = self.resultat + [random.choice([1, 2, 3, 4, 5, 6])]
 
     def __str__(self): # **** a completer ****
         '''
