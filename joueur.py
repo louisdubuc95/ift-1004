@@ -41,5 +41,5 @@ class Joueur:
         Returns (str): La chaîne de caractères représentant le joueur.
 
         """
-
-        return self.nom
+        c1 = "c'est au tour du joueur {0}".format(nom)
+        return c1
