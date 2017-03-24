@@ -16,8 +16,9 @@ class Partie:
         Args:
             joueurs (list): La liste des joueurs.
         """
-        self.joueurs = joueurs  #C'est une liste
-
+        self.joueurs = joueurs  #C'est une liste de joeur
+        print("SWAG")
+        print(len(self.joueurs))
 
 
 
@@ -28,8 +29,29 @@ class Partie:
         Le joueur gagnant est affiché à l'écran (ou un message indiquant que la partie est nulle, s'il y a lieu).
         """
 
+        i =0
+
+        while i < len(self.joueurs) :
+
+           i+=1
+
+           if i == 1 :
+              print ("joueur 1")
+           elif i == 2 :
+              print ("joueur 2")
+
+           elif i == 3 :
+              print("joueur 3")
+
+
+        #TEMPORAIRE
         Combinaison._lancer_des(self,5)
         Combinaison.__str__(self)
+
+
+
+
+
 
 
     def _determiner_ordre(self): # **** a completer ****
@@ -40,6 +62,10 @@ class Partie:
             [2, 1, 0] indique que joueur 3 joue, suivi du joueur 2, puis du
             joueur 1.
         """
+
+
+
+
 
 #lol
 

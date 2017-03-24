@@ -19,7 +19,7 @@ class Joueur:
         self.nom = nom
         print (type(self.nom))
         print (self.nom)
-        self.nb_victorie = 0
+        self.nb_victoire = 0
         self. nb_parties_jouees = 0
 
 
@@ -43,5 +43,5 @@ class Joueur:
         Returns (str): La chaîne de caractères représentant le joueur.
 
         """
-
-        return self.nom
+        c1 = "c'est au tour du joueur {0}".format(nom)
+        return c1

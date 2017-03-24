@@ -75,9 +75,10 @@ class Combinaison:
         resultat = []
         for i in range(self.n):
             resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
-
-
         print(resultat)
+
+
+
 
 
 #***************************
