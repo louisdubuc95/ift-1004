@@ -17,6 +17,8 @@ class Joueur:
             nom (str): Le nom du joueur.
         """
         self.nom = nom
+        print (type(self.nom))
+        print (self.nom)
         self.nb_victorie = 0
         self. nb_parties_jouees = 0
 
@@ -33,8 +35,7 @@ class Joueur:
         self.limite_lancers = limite_lancers
 
 
-        self.limite_lancers= limite_lancers
-
+        return self.limite_lancers
 
     def __str__(self): # **** a completer ****
         """
@@ -43,3 +44,4 @@ class Joueur:
 
         """
 
+        return self.nom

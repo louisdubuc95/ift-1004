@@ -28,6 +28,7 @@ class Partie:
         Le joueur gagnant est affiché à l'écran (ou un message indiquant que la partie est nulle, s'il y a lieu).
         """
 
+        c1 = Joueur.nom("LOL")
 
 
 
