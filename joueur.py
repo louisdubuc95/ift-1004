@@ -33,6 +33,8 @@ class Joueur:
         self.limite_lancers = limite_lancers
 
 
+        self.limite_lancers= limite_lancers
+
 
     def __str__(self): # **** a completer ****
         """

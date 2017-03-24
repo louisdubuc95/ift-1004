@@ -17,7 +17,9 @@ class Partie:
             joueurs (list): La liste des joueurs.
         """
         self.joueurs = joueurs  #C'est une liste
-        print(type(self.joueurs))
+
+
+
 
     def jouer_partie(self): # **** a completer ****
         """ Joue une partie entre tous les joueurs et détermine le gagnant.
@@ -25,6 +27,8 @@ class Partie:
         Le compteur de victoires est incrémenté pour le joueur gagnant (si la partie n'est pas nulle).
         Le joueur gagnant est affiché à l'écran (ou un message indiquant que la partie est nulle, s'il y a lieu).
         """
+
+
 
 
     def _determiner_ordre(self): # **** a completer ****
