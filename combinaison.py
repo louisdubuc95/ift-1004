@@ -27,7 +27,7 @@ class Combinaison:
             index_a_relancer (list): Liste des index des dés à relancer.
         """
 
-    self.a
+
 
 
     def determiner_type_combinaison(self): # **** a completer ****
@@ -63,7 +63,7 @@ class Combinaison:
         resultat = []
         for i in range(self.n):
          resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
-
+    print(_lancer_des(1))
     def __str__(self): # **** a completer ****
         '''
         a vous de voir comment definir et utiliser
