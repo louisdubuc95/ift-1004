@@ -14,8 +14,11 @@ class Combinaison:
         Carte.AS, Carte.ROI, Carte.DAME, Carte.VALET, Carte.DIX, Carte.NEUF
     ]
 
-    def __init__(self, des = None): # **** a completer ****
+    def __init__(self, des = None ): # **** a completer ****
         """Initialise une combinaison"""
+        self.des = des
+        self.nb_lancers = 0
+        self.types_cartes = []
 
 
     def relancer_des(self, index_a_relancer): # **** a completer ****
@@ -23,6 +26,8 @@ class Combinaison:
         Args:
             index_a_relancer (list): Liste des index des dés à relancer.
         """
+
+
 
 
     def determiner_type_combinaison(self): # **** a completer ****
@@ -54,8 +59,11 @@ class Combinaison:
         Args:
             n (int): Le nombre de dés à lancer.
         """
-
-
+        self.n = n
+        resultat = []
+        for i in range(self.n):
+         resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
+    print(_lancer_des(1))
     def __str__(self): # **** a completer ****
         '''
         a vous de voir comment definir et utiliser
