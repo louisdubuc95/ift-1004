@@ -13,7 +13,7 @@ class TypeCombinaison(Enum):
     DEUX_PAIRES = 2
     UNE_PAIRE = 1
     AUTRE = 0
-#test
+
     def __str__(self):
         if self == TypeCombinaison.QUINTON:
             return "Quinton"

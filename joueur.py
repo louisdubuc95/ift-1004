@@ -30,8 +30,6 @@ class Joueur:
         Returns (Combinaison): La combinaison obtenue
 
         """
-        self.limite_lancers = limite_lancers
-
 
         self.limite_lancers= limite_lancers
 
