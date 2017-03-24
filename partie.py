@@ -71,8 +71,9 @@ class Partie:
             joueur 1.
         """
 
-        self.ordre_1 = [[i] for i in range(len(self.joueurs))]
+        self.ordre_1 = [0,1,2]
         shuffle(self.ordre_1)
+
 
         return self.ordre_1
 
