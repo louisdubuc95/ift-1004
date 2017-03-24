@@ -17,6 +17,7 @@ class Combinaison:
     def __init__(self, des = None ): # **** a completer ****
         """Initialise une combinaison"""
         self.des = des
+
         self.nb_lancers = 0
         self.types_cartes = []
 
@@ -26,6 +27,8 @@ class Combinaison:
         Args:
             index_a_relancer (list): Liste des index des dés à relancer.
         """
+
+        self.index_a_relancer = index_a_relancer
 
 
 
@@ -59,17 +62,22 @@ class Combinaison:
         Args:
             n (int): Le nombre de dés à lancer.
         """
+
         self.n = n
-        resultat = []
-        for i in range(self.n):
-         resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
-    print(_lancer_des(1))
+
     def __str__(self): # **** a completer ****
         '''
         a vous de voir comment definir et utiliser
         :return: a definir selon vos besoins
         '''
 
+
+        resultat = []
+        for i in range(self.n):
+            resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
+
+
+        print(resultat)
 
 
 #***************************
