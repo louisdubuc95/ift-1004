@@ -1,8 +1,7 @@
 # rien a ajouter/modifier, seulement comprendre
 
 from partie import Partie
-from joueur import J
-import combinaison
+from joueur import Joueur
 
 if __name__ == "__main__":
     print("Bienvenue au Poker d'As!")

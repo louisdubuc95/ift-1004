@@ -19,7 +19,7 @@ class Joueur:
         self.nom = nom
         print (type(self.nom))
         print (self.nom)
-        self.nb_victorie = 0
+        self.nb_victoire = 0
         self. nb_parties_jouees = 0
 
 

@@ -38,7 +38,7 @@ class Combinaison:
 
         Return (TypeCombinaison): Le type de la combinaison.
         """
-
+        TypeCombinaison(self)
 
     @staticmethod
     def determiner_meilleur_combinaison(combinaisons): # **** a completer ****
