@@ -28,7 +28,7 @@ class Partie:
         Le joueur gagnant est affiché à l'écran (ou un message indiquant que la partie est nulle, s'il y a lieu).
         """
 
-        Combinaison._lancer_des(self,1)
+        Combinaison._lancer_des(self,5)
         Combinaison.__str__(self)
 
 
