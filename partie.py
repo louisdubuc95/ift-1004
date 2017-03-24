@@ -54,8 +54,9 @@ class Partie:
         #TEMPORAIRE
         Combinaison._lancer_des(self,5)
         Combinaison.__str__(self)
-
-
+        print()
+        print(Partie._determiner_ordre(self))
+        print()
 
 
 
@@ -70,9 +71,10 @@ class Partie:
             joueur 1.
         """
 
+        self.ordre_1 = [[i] for i in range(len(self.joueurs))]
+        shuffle(self.ordre_1)
 
-
-
+        return self.ordre_1
 
 #lol
 
