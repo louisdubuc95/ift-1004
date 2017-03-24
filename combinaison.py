@@ -38,6 +38,8 @@ class Combinaison:
 
         Return (TypeCombinaison): Le type de la combinaison.
         """
+        # DÉTERMINE LE JEU DE L'UTILISATEUR.
+        # EX : A A R D 9  --> PAIR
 
 
     @staticmethod
@@ -62,8 +64,11 @@ class Combinaison:
         Args:
             n (int): Le nombre de dés à lancer.
         """
-
         self.n = n
+        self.resultat = []
+        for i in range(self.n):
+            self.resultat = self.resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
+            print(self.resultat)
 
     def __str__(self): # **** a completer ****
         '''
@@ -72,10 +77,18 @@ class Combinaison:
         '''
 
 
-        resultat = []
-        for i in range(self.n):
-            resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
-        print(resultat)
+
+
+        des_choisi = [0] * 5
+        longueur_premier_lancer = len(des_choisi)
+        premier_lancer = self.resultat
+        print ("Resultat actuelle:")
+        i = 0
+        for a in range(len(premier_lancer)):
+            i += 1
+            print ("Dé numéro {0} : {1}".format(i, self.resultat[a]))
+
+        #return premier_lancer
 
 
 

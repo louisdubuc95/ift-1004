@@ -17,6 +17,8 @@ class Partie:
             joueurs (list): La liste des joueurs.
         """
         self.joueurs = joueurs  #C'est une liste de joeur
+
+
         print("SWAG")
         print(len(self.joueurs))
 
@@ -36,11 +38,16 @@ class Partie:
            i+=1
 
            if i == 1 :
+
               print ("joueur 1")
+
            elif i == 2 :
+
               print ("joueur 2")
 
+
            elif i == 3 :
+
               print("joueur 3")
 
 
