@@ -51,12 +51,17 @@ class Partie:
             nb_lancer = 0
             while nb_lancer < 3 :
                 nb_lancer += 1
-                entre_utilisateur = input("\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
-                des_choisi = Partie._convert(self, entre_utilisateur, ',')
+                if nb_lancer != 3 :
+                    entre_utilisateur = input("\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
+                    des_choisi = Partie._convert(self, entre_utilisateur, ',')
 
-                if des_choisi != [0]:
-                    Combinaison.relancer_des(self,des_choisi)
-                    Combinaison.__str__(self)
+                    if des_choisi != [0]:
+                      Combinaison.relancer_des(self,des_choisi)
+                      Combinaison.__str__(self)
+
+                    elif(des_choisi) == [0]:
+                     nb_lancer=3
+
 
 
 

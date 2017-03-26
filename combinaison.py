@@ -17,9 +17,6 @@ class Combinaison:
     def __init__(self, des= None): # **** a completer ****
         """Initialise une combinaison"""
         self.des = des
-        print("SKRT")
-        print(type(self.des))
-
         self.nb_lancers = 0
         self.types_cartes = []
 
@@ -34,10 +31,9 @@ class Combinaison:
       #  if type(index_a_relancer) == list :
 
         self.index_a_relancer = index_a_relancer
-        print("SKRKTKSDG")
+
         print (type(self.index_a_relancer))
 
-        print("WTF")
 
 
         for i in range(len(self.index_a_relancer)):
