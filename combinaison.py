@@ -105,25 +105,6 @@ class Combinaison:
 
 
 
-#        for n, i in enumerate(self.resultat):
-#
-#             if i == 0:
-#                 self.resultat[n] = Carte.AS
-#
-#             elif i == 1:
-#                 self.resultat[n] = Carte.ROI
-#
-#             elif i == 2:
-#                 self.resultat[n] = Carte.DAME
-#
-#             elif i == 3:
-#               self.resultat[n] = Carte.VALET
-#
-#            elif i == 4:
-#                self.resultat[n] = Carte.DIX
-#
-#            elif i == 5:
-#               self.resultat[n] = Carte.NEUF
 
 
 
@@ -133,8 +114,28 @@ class Combinaison:
         :return: a definir selon vos besoins
         '''
 
-
         lancer = Combinaison.des
+        for n, i in enumerate(lancer):
+
+            if i == 0:
+                lancer[n] = Carte.AS
+
+            elif i == 1:
+                lancer[n] = Carte.ROI
+
+            elif i == 2:
+                lancer[n] = Carte.DAME
+
+            elif i == 3:
+                lancer[n] = Carte.VALET
+
+            elif i == 4:
+                lancer[n] = Carte.DIX
+
+            elif i == 5:
+                lancer[n] = Carte.NEUF
+
+
         print ("Resultats du lancer actuel:")
         i = 0
         for a in range(len(lancer)):
