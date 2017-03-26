@@ -75,7 +75,7 @@ class Partie:
             [2, 1, 0] indique que joueur 3 joue, suivi du joueur 2, puis du
             joueur 1.
         """
-        if len(self.joueurs) == 1 :
+        if len(self.joueurs) == 1:
             self.ordre_1 = [0]
             shuffle(self.ordre_1)
             self.ordre_aleatoire = [self.joueurs[i] for i in self.ordre_1]
@@ -85,7 +85,7 @@ class Partie:
             shuffle(self.ordre_1)
             self.ordre_aleatoire = [self.joueurs[i] for i in self.ordre_1]
             return  self.ordre_aleatoire
-        elif len(self.joueurs) == 3 :
+        elif len(self.joueurs) == 3:
             self.ordre_1 = [0,1,2]
             shuffle(self.ordre_1)
             self.ordre_aleatoire = [self.joueurs[i] for i in self.ordre_1]

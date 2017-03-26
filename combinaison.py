@@ -27,16 +27,8 @@ class Combinaison:
         Args:
             index_a_relancer (list): Liste des index des dés à relancer.
         """
-        self.index_a_relancer = index_a_relancer
-
-        resultat = []
-        for i in range(self.index_a_relancer):
-            resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
-
 
         self.index_a_relancer = index_a_relancer
-
-        self.nb_lancers += 1
 
 
 
@@ -75,7 +67,31 @@ class Combinaison:
         self.n = n
         self.resultat = []
         for i in range(self.n):
-            self.resultat = self.resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
+            self.resultat = self.resultat + [choice([0, 1, 2, 3, 4, 5])]  # variante de randint(1,6)
+
+        print(self.resultat)
+
+        for n, i in enumerate(self.resultat):
+
+            if i == 0:
+                self.resultat[n] = Carte.AS
+
+            elif i == 1:
+                self.resultat[n] = Carte.ROI
+
+            elif i == 2:
+                self.resultat[n] = Carte.DAME
+
+            elif i == 3:
+                self.resultat[n] = Carte.VALET
+
+            elif i == 4:
+                self.resultat[n] = Carte.DIX
+
+            elif i == 5:
+                self.resultat[n] = Carte.NEUF
+
+        print(self.resultat)
 
     def __str__(self): # **** a completer ****
         '''
@@ -85,16 +101,19 @@ class Combinaison:
 
 
 
+
         des_choisi = [0] * 5
         longueur_premier_lancer = len(des_choisi)
         premier_lancer = self.resultat
-        print ("Resultat actuelle:")
+        print ("Resultats du lancer actuel:")
         i = 0
         for a in range(len(premier_lancer)):
             i += 1
             print ("Dé numéro {0} : {1}".format(i, self.resultat[a]))
 
-       # return lancer
+        determiner_type_combinaison(self)
+
+        #return premier_lancer
 
 
 
