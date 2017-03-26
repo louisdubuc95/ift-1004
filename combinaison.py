@@ -14,12 +14,11 @@ class Combinaison:
         Carte.AS, Carte.ROI, Carte.DAME, Carte.VALET, Carte.DIX, Carte.NEUF
     ]
 
-    def __init__(self, des= None): # **** a completer ****
+    def __init__(self, des): # **** a completer ****
         """Initialise une combinaison"""
         self.des = des
         self.nb_lancers = 0
-        self.types_cartes = []
-
+        self.types_de = type_de
 
     def relancer_des(self, index_a_relancer): # **** a completer ****
         """Relance les dés spécifiés
@@ -28,13 +27,8 @@ class Combinaison:
         """
 
 
-      #  if type(index_a_relancer) == list :
 
         self.index_a_relancer = index_a_relancer
-
-        print (type(self.index_a_relancer))
-
-
 
         for i in range(len(self.index_a_relancer)):
              if self.index_a_relancer[i] == 1:
@@ -52,7 +46,7 @@ class Combinaison:
              elif self.index_a_relancer[i] == 5:
                 Combinaison.des[4:5] = Combinaison._lancer_des(self,1)
 
-        ## self.nb_lancers += 1
+        #self.nb_lancers += 1
 
 
 
@@ -62,7 +56,51 @@ class Combinaison:
 
         Return (TypeCombinaison): Le type de la combinaison.
         """
-        # DÉTERMINE LE JEU DE L'UTILISATEUR.
+
+        codage = [0] * 6
+        for i in range(len(Combinaison.des)):
+            codage[Combinaison.des[i] - 1] += 1
+        print(codage)
+
+        for i in range(len(codage)):
+            if codage[i]== TypeCombinaison.UNE_PAIRE :
+                une_pair = TypeCombinaison.UNE_PAIRE
+                return une_pair
+
+
+
+        lancer_1 = []
+        lancer = lancer_1 + codage
+
+
+        for n, i in enumerate(lancer):
+
+            if i == 0:
+                lancer[n] = Carte.AS
+
+            elif i == 1:
+                lancer[n] = Carte.ROI
+
+
+            elif i == 2:
+                lancer[n] = Carte.DAME
+
+            elif i == 3:
+                lancer[n] = Carte.VALET
+
+            elif i == 4:
+                lancer[n] = Carte.DIX
+
+            elif i == 5:
+                lancer[n] = Carte.NEUF
+
+
+
+
+
+
+
+                # DÉTERMINE LE JEU DE L'UTILISATEUR.
         # EX : A A R D 9  --> PAIR
 
 
@@ -110,7 +148,10 @@ class Combinaison:
         :return: a definir selon vos besoins
         '''
 
-        lancer = Combinaison.des
+
+        lancer_1 = []
+        lancer  = lancer_1 + Combinaison.des
+
         for n, i in enumerate(lancer):
 
             if i == 0:
@@ -119,8 +160,9 @@ class Combinaison:
             elif i == 1:
                 lancer[n] = Carte.ROI
 
+
             elif i == 2:
-                lancer[n] = Carte.DAME
+               lancer[n] = Carte.DAME
 
             elif i == 3:
                 lancer[n] = Carte.VALET

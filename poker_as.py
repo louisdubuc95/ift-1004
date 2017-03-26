@@ -16,7 +16,7 @@ if __name__ == "__main__":
     for i in range(0, nb_joueurs):
         nom = input("Entrez le nom du joueur {:d} ".format(i + 1))
         joueurs.append(Joueur(nom))
-    print(joueurs)
+
 
 
 
