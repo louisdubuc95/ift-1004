@@ -14,9 +14,11 @@ class Combinaison:
         Carte.AS, Carte.ROI, Carte.DAME, Carte.VALET, Carte.DIX, Carte.NEUF
     ]
 
-    def __init__(self, des = None ): # **** a completer ****
+    def __init__(self, des= None): # **** a completer ****
         """Initialise une combinaison"""
         self.des = des
+        print("SKRT")
+        print(type(self.des))
 
         self.nb_lancers = 0
         self.types_cartes = []
@@ -28,7 +30,33 @@ class Combinaison:
             index_a_relancer (list): Liste des index des dés à relancer.
         """
 
+
+      #  if type(index_a_relancer) == list :
+
         self.index_a_relancer = index_a_relancer
+        print("SKRKTKSDG")
+        print (type(self.index_a_relancer))
+
+        print("WTF")
+
+
+        for i in range(len(self.index_a_relancer)):
+             if self.index_a_relancer[i] == 1:
+                Combinaison.des[0:1] = Combinaison._lancer_des(self,1)
+
+             elif self.index_a_relancer[i] == 2:
+                 Combinaison.des[1:2] = Combinaison._lancer_des(self,1)
+
+             elif self.index_a_relancer[i] == 3:
+                Combinaison.des[2:3] = Combinaison._lancer_des(self,1)
+
+             elif self.index_a_relancer[i] == 4:
+                Combinaison.des[3:4] = Combinaison._lancer_des(self,1)
+
+             elif self.index_a_relancer[i] == 5:
+                Combinaison.des[4:5] = Combinaison._lancer_des(self,1)
+
+        ## self.nb_lancers += 1
 
 
 
@@ -68,30 +96,36 @@ class Combinaison:
         self.resultat = []
         for i in range(self.n):
             self.resultat = self.resultat + [choice([0, 1, 2, 3, 4, 5])]  # variante de randint(1,6)
+        return self.resultat
 
-        print(self.resultat)
 
-        for n, i in enumerate(self.resultat):
 
-            if i == 0:
-                self.resultat[n] = Carte.AS
 
-            elif i == 1:
-                self.resultat[n] = Carte.ROI
 
-            elif i == 2:
-                self.resultat[n] = Carte.DAME
 
-            elif i == 3:
-                self.resultat[n] = Carte.VALET
 
-            elif i == 4:
-                self.resultat[n] = Carte.DIX
 
-            elif i == 5:
-                self.resultat[n] = Carte.NEUF
+#        for n, i in enumerate(self.resultat):
+#
+#             if i == 0:
+#                 self.resultat[n] = Carte.AS
+#
+#             elif i == 1:
+#                 self.resultat[n] = Carte.ROI
+#
+#             elif i == 2:
+#                 self.resultat[n] = Carte.DAME
+#
+#             elif i == 3:
+#               self.resultat[n] = Carte.VALET
+#
+#            elif i == 4:
+#                self.resultat[n] = Carte.DIX
+#
+#            elif i == 5:
+#               self.resultat[n] = Carte.NEUF
 
-        print(self.resultat)
+
 
     def __str__(self): # **** a completer ****
         '''
@@ -100,20 +134,15 @@ class Combinaison:
         '''
 
 
-
-
-        des_choisi = [0] * 5
-        longueur_premier_lancer = len(des_choisi)
-        premier_lancer = self.resultat
+        lancer = Combinaison.des
         print ("Resultats du lancer actuel:")
         i = 0
-        for a in range(len(premier_lancer)):
+        for a in range(len(lancer)):
             i += 1
-            print ("Dé numéro {0} : {1}".format(i, self.resultat[a]))
+            print ("Dé numéro {0} : {1}".format(i,lancer[a]))
 
-        determiner_type_combinaison(self)
 
-        #return premier_lancer
+        #return lancer
 
 
 

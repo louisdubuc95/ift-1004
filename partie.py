@@ -31,17 +31,33 @@ class Partie:
         Le joueur gagnant est affiché à l'écran (ou un message indiquant que la partie est nulle, s'il y a lieu).
         """
 
+        c1  = [0,0,0,0,0]
+        Combinaison.des = c1
+
+        c2 = [1,2,3,4,5]
+        Combinaison.relancer_des(self,c2)
+
         i =0
+
         ordre_aleatoire = Partie._determiner_ordre(self)
 
         while i < len(self.joueurs) :
-
            i+=1
 
+
            if i == 1 :
-            print ("c'est au tour du joueur : {0}".format(ordre_aleatoire[0:1]))
-            Combinaison._lancer_des(self,5)
+            print ("c'est au tour du joueur : {0}\n".format(ordre_aleatoire[0:1]))
             Combinaison.__str__(self)
+            nb_lancer = 0
+            while nb_lancer < 3 :
+                nb_lancer += 1
+                entre_utilisateur = input("\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
+                des_choisi = Partie._convert(self, entre_utilisateur, ',')
+
+                if des_choisi != [0]:
+                    Combinaison.relancer_des(self,des_choisi)
+                    Combinaison.__str__(self)
+
 
 
 
@@ -91,6 +107,17 @@ class Partie:
             self.ordre_aleatoire = [self.joueurs[i] for i in self.ordre_1]
             return self.ordre_aleatoire
 
+
+    def _convert(self,nombre, virgule):
+            """
+            Cette definition traduit l'entré de l'utilisateur en liste pour que le programmme puisse s'executer.
+            :param : l'entré de l'utilisateur (ex : "1,2,3") et ce que nous voulons enlever de l'entrer (ex : ",")
+            :return : Une liste des pramètre entré par l'utilisateur (ex : [1,2,3]
+            """
+
+            results = nombre.split(virgule)
+            results1 = list(map(int, results))
+            return results1
 
 
 
