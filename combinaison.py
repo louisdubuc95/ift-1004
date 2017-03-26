@@ -27,8 +27,16 @@ class Combinaison:
         Args:
             index_a_relancer (list): Liste des index des dés à relancer.
         """
+        self.index_a_relancer = index_a_relancer
+
+        resultat = []
+        for i in range(self.index_a_relancer):
+            resultat = resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
+
 
         self.index_a_relancer = index_a_relancer
+
+        self.nb_lancers += 1
 
 
 
@@ -68,14 +76,12 @@ class Combinaison:
         self.resultat = []
         for i in range(self.n):
             self.resultat = self.resultat + [choice([1, 2, 3, 4, 5, 6])]  # variante de randint(1,6)
-            print(self.resultat)
 
     def __str__(self): # **** a completer ****
         '''
         a vous de voir comment definir et utiliser
         :return: a definir selon vos besoins
         '''
-
 
 
 
@@ -88,7 +94,7 @@ class Combinaison:
             i += 1
             print ("Dé numéro {0} : {1}".format(i, self.resultat[a]))
 
-        #return premier_lancer
+       # return lancer
 
 
 

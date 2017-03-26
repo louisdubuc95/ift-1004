@@ -32,28 +32,33 @@ class Partie:
         """
 
         i =0
+        ordre_aleatoire = Partie._determiner_ordre(self)
 
         while i < len(self.joueurs) :
 
            i+=1
 
            if i == 1 :
+            print ("c'est au tour du joueur : {0}".format(ordre_aleatoire[0:1]))
+            Combinaison._lancer_des(self,5)
+            Combinaison.__str__(self)
 
-              print ("joueur 1")
+
+
 
            elif i == 2 :
+               print("c'est au tour du joueur : {0}".format(ordre_aleatoire[1:2]))
 
-              print ("joueur 2")
+
 
 
            elif i == 3 :
+               print("c'est au tour du joueur : {0}".format(ordre_aleatoire[2:3]))
 
-              print("joueur 3")
 
 
         #TEMPORAIRE
-        Combinaison._lancer_des(self,5)
-        Combinaison.__str__(self)
+
         print()
         print(Partie._determiner_ordre(self))
         print()
@@ -70,14 +75,24 @@ class Partie:
             [2, 1, 0] indique que joueur 3 joue, suivi du joueur 2, puis du
             joueur 1.
         """
+        if len(self.joueurs) == 1 :
+            self.ordre_1 = [0]
+            shuffle(self.ordre_1)
+            self.ordre_aleatoire = [self.joueurs[i] for i in self.ordre_1]
+            return self.ordre_aleatoire
+        if len(self.joueurs) == 2:
+            self.ordre_1 = [0,1]
+            shuffle(self.ordre_1)
+            self.ordre_aleatoire = [self.joueurs[i] for i in self.ordre_1]
+            return  self.ordre_aleatoire
+        elif len(self.joueurs) == 3 :
+            self.ordre_1 = [0,1,2]
+            shuffle(self.ordre_1)
+            self.ordre_aleatoire = [self.joueurs[i] for i in self.ordre_1]
+            return self.ordre_aleatoire
 
-        self.ordre_1 = [0,1,2]
-        shuffle(self.ordre_1)
 
 
-        return self.ordre_1
-
-#lol
 
 
 #***************************
