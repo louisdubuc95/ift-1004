@@ -42,40 +42,64 @@ class Partie:
         ordre_aleatoire = Partie._determiner_ordre(self)
 
         while i < len(self.joueurs) :
-           i+=1
+            i+=1
 
 
-           if i == 1 :
-            print ("c'est au tour du joueur : {0}\n".format(ordre_aleatoire[0:1]))
-            Combinaison.__str__(self)
-            nb_lancer = 0
-            while nb_lancer < 3 :
-                nb_lancer += 1
-                if nb_lancer != 3 :
-                    entre_utilisateur = input("\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
-                    des_choisi = Partie._convert(self, entre_utilisateur, ',')
+            if i == 1 :
+                print ("c'est au tour du joueur : {0}\n".format(ordre_aleatoire[0:1]))
+                Combinaison.__str__(self)
+                nb_lancer = 0
+                while nb_lancer < 3 :
+                    nb_lancer += 1
+                    if nb_lancer != 3 :
+                        entre_utilisateur = input("\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
+                        des_choisi = Partie._convert(self, entre_utilisateur, ',')
 
-                    if des_choisi != [0]:
-                      Combinaison.relancer_des(self,des_choisi)
-                      Combinaison.__str__(self)
+                        if des_choisi != [0]:
+                            Combinaison.relancer_des(self,des_choisi)
+                            Combinaison.__str__(self)
 
-                    elif(des_choisi) == [0]:
-                     nb_lancer=3
-
-
+                        elif(des_choisi) == [0]:
+                            nb_lancer=3
 
 
+            elif i == 2 :
+                 print("c'est au tour du joueur : {0}".format(ordre_aleatoire[1:2]))
 
+                 Combinaison.__str__(self)
+                 nb_lancer = 0
+                 while nb_lancer < 3:
+                    nb_lancer += 1
+                    if nb_lancer != 3:
+                          entre_utilisateur = input(
+                             "\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
+                          des_choisi = Partie._convert(self, entre_utilisateur, ',')
 
-           elif i == 2 :
-               print("c'est au tour du joueur : {0}".format(ordre_aleatoire[1:2]))
+                          if des_choisi != [0]:
+                            Combinaison.relancer_des(self, des_choisi)
+                            Combinaison.__str__(self)
 
+                          elif (des_choisi) == [0]:
+                            nb_lancer = 3
 
+            elif i == 3 :
+                 print("c'est au tour du joueur : {0}".format(ordre_aleatoire[2:3]))
 
+                 Combinaison.__str__(self)
+                 nb_lancer = 0
+                 while nb_lancer < 3:
+                    nb_lancer += 1
+                    if nb_lancer != 3:
+                        entre_utilisateur = input(
+                            "\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
+                        des_choisi = Partie._convert(self, entre_utilisateur, ',')
 
-           elif i == 3 :
-               print("c'est au tour du joueur : {0}".format(ordre_aleatoire[2:3]))
+                        if des_choisi != [0]:
+                            Combinaison.relancer_des(self, des_choisi)
+                            Combinaison.__str__(self)
 
+                        elif (des_choisi) == [0]:
+                          nb_lancer = 3
 
 
         #TEMPORAIRE
