@@ -19,6 +19,8 @@ class Joueur:
             nom (str): Le nom du joueur.
         """
         self.nom = nom
+        print (type(self.nom))
+        print (self.nom)
         self.nb_victoire = 0
         self.nb_partie_jouees = 0
 

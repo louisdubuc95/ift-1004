@@ -125,6 +125,9 @@ class Combinaison:
         print(combinaisons)
 
 
+
+
+
        # joueur = combinaison[0]
        # print (joueur)
 
@@ -191,7 +194,7 @@ class Combinaison:
             i += 1
             print ("Dé numéro {0} : {1}".format(i,lancer[a]))
 
-
+        print(Combinaison.des)
         #return lancer
 
 

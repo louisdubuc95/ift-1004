@@ -29,6 +29,9 @@ class Partie:
         des_joueur_3 = [0] * 5
         i = 0
 
+#   Crée une variable "ordre_aleatoire" avec les valeurs de la fonction "determiner_ordre" du présent fichier
+#   dans le but de créer une liste des noms de manière aléatoire.
+
         ordre_aleatoire = Partie._determiner_ordre(self)
         if len(self.joueurs) == 1 :
             print("L'ordre aléatoire sera  : {0}".format(ordre_aleatoire[0]))
@@ -37,11 +40,13 @@ class Partie:
         elif len(self.joueurs) == 3 :
             print("L'ordre aléatoire sera  : {0}, {1} et {2}".format(ordre_aleatoire[0],ordre_aleatoire[1],ordre_aleatoire[2]))
 
+#   Début de la boucle simulant une partie pour chaque joueurs
+
         while i < len(self.joueurs) :
             i+=1
 
             if i == 1 :
-                print ("c'est au tour du joueur : {0}".format(ordre_aleatoire[0]))
+                print ("C'est au tour du joueur : {0}".format(ordre_aleatoire[0]))
                 c1 = [0, 0, 0, 0, 0]
                 Combinaison.des = c1
 
@@ -62,6 +67,9 @@ class Partie:
                         terminer_1 = Combinaison.determiner_type_combinaison(self)
                         print (terminer_1)
 
+#   Si le joueur décide de modifier son résultat actuel, le programme débute les prochaines lignes de code en
+#   prenant en compte les dés sélectionnés pour la relance
+
                     elif nb_lancer != 3 :
 
                         entre_utilisateur = input("\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
@@ -79,12 +87,12 @@ class Partie:
                             des_joueur_1 = Combinaison.des
                             nb_lancer=3
 
-
-
+#   Cette partie du code sera lancée seulement si l'utilisateur indique qu'il y aura plus qu'un joueur dans la partie
+#   elle correspond aux parties des autres joueurs
 
             elif i == 2 :
 
-                 print("c'est au tour du joueur : {0}".format(ordre_aleatoire[1]))
+                 print("C'est au tour du joueur : {0}".format(ordre_aleatoire[1]))
 
                  c1 = [0, 0, 0, 0, 0]
                  Combinaison.des = c1
@@ -92,9 +100,13 @@ class Partie:
                  c2 = [1, 2, 3, 4, 5]
                  Combinaison.relancer_des(self, c2)
 
+#   On change les valeurs numériques des dés pour les valeurs des "cartes"
+
                  Combinaison.__str__(self)
 
                  nb_lancer_2 = 0
+
+#   Boucle permettant de limiter les théoriques joueurs 2 et 3 d'effectuer plus de lancers que le premier joueur
 
                  while nb_lancer_2 < nb_lancer_1:
                     nb_lancer_2 += 1
@@ -112,6 +124,8 @@ class Partie:
                             Combinaison.relancer_des(self, des_choisi)
                             Combinaison.__str__(self)
 
+#   Condition impliquant la fin du tour du joueur selon l'atteinte du nombre maximum de lancers
+
                           elif (des_choisi) == [0]:
                             terminer_2 = Combinaison.determiner_type_combinaison(self)
                             print (terminer_2)
@@ -119,7 +133,7 @@ class Partie:
                             nb_lancer_2 = nb_lancer_1
 
             elif i == 3 :
-                 print("c'est au tour du joueur : {0}".format(ordre_aleatoire[2]))
+                 print("C'est au tour du joueur : {0}".format(ordre_aleatoire[2]))
 
                  c1 = [0, 0, 0, 0, 0]
                  Combinaison.des = c1
@@ -149,6 +163,8 @@ class Partie:
                             print (terminer_3)
                             des_joueur_3 = Combinaison.des
                             nb_lancer_3 = nb_lancer_1
+
+
 
         #test = [[ordre_aleatoire[0],ordre_aleatoire[1],ordre_aleatoire[2]],[des_joueur_1,des_joueur_2,des_joueur_3]]
       #  lol = [Joueur(ordre_aleatoire[0])]
@@ -203,6 +219,9 @@ class Partie:
             [2, 1, 0] indique que joueur 3 joue, suivi du joueur 2, puis du
             joueur 1.
         """
+#   On parcours la liste des joueurs selon leur nombre (1, 2 ou 3)
+#   et l'on crée une nouvelle liste aléatoire contenant leurs noms
+
         if len(self.joueurs) == 1:
             self.ordre_1 = [0]
             shuffle(self.ordre_1)
