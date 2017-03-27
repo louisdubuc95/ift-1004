@@ -10,6 +10,8 @@ class Combinaison:
         nb_lancers (int): Le nombre de lancers réalisés.
         types_cartes (list): Les différents types de cartes.
     """
+    des = [0,0,0,0,0]
+    nb_lancers = 0
     types_de = [
         Carte.AS, Carte.ROI, Carte.DAME, Carte.VALET, Carte.DIX, Carte.NEUF
     ]
@@ -17,8 +19,7 @@ class Combinaison:
     def __init__(self, des): # **** a completer ****
         """Initialise une combinaison"""
         self.des = des
-        self.nb_lancers = 0
-        self.types_de = type_de
+
 
     def relancer_des(self, index_a_relancer): # **** a completer ****
         """Relance les dés spécifiés
@@ -46,7 +47,7 @@ class Combinaison:
              elif self.index_a_relancer[i] == 5:
                 Combinaison.des[4:5] = Combinaison._lancer_des(self,1)
 
-        #self.nb_lancers += 1
+
 
 
 
@@ -62,46 +63,50 @@ class Combinaison:
             codage[Combinaison.des[i] - 1] += 1
         print(codage)
 
+
+        trois = 0
+        deux = 0
         for i in range(len(codage)):
-            if codage[i]== TypeCombinaison.UNE_PAIRE :
-                une_pair = TypeCombinaison.UNE_PAIRE
-                return une_pair
+            if codage[i] == 5:
+
+                quinton = TypeCombinaison.QUINTON
+                return quinton
+
+            elif codage[i] == 4:
+                carre = TypeCombinaison.CARRE
+                return carre
+
+            elif codage[i] == 3:
+                trois = trois + 1
+
+            elif codage[i] == 2:
+                deux = deux + 1
+
+        if deux == 1 and trois == 1:
+            full = TypeCombinaison.FULL
+            return full
+
+        elif trois == 1 and deux != 1:
+            brelan = TypeCombinaison.BRELAN
+            return brelan
+
+        elif (codage == [1, 1, 1, 1, 1, 0] or codage == [0, 1, 1, 1, 1, 1]):
+            sequence = TypeCombinaison.SEQUENCE
+            return sequence
+
+        elif deux == 2:
+            deux_pair = TypeCombinaison.DEUX_PAIRES
+            return deux_pair
+
+        elif deux == 1 and trois != 1:
+            pair = TypeCombinaison.UNE_PAIRE
+            return pair
+
+        else:
+            autre = TypeCombinaison.AUTRE
+            return autre
 
 
-
-        lancer_1 = []
-        lancer = lancer_1 + codage
-
-
-        for n, i in enumerate(lancer):
-
-            if i == 0:
-                lancer[n] = Carte.AS
-
-            elif i == 1:
-                lancer[n] = Carte.ROI
-
-
-            elif i == 2:
-                lancer[n] = Carte.DAME
-
-            elif i == 3:
-                lancer[n] = Carte.VALET
-
-            elif i == 4:
-                lancer[n] = Carte.DIX
-
-            elif i == 5:
-                lancer[n] = Carte.NEUF
-
-
-
-
-
-
-
-                # DÉTERMINE LE JEU DE L'UTILISATEUR.
-        # EX : A A R D 9  --> PAIR
 
 
     @staticmethod
@@ -117,6 +122,21 @@ class Combinaison:
                          l'utilisation souhaitée.
 
         """
+        print(combinaisons)
+
+
+       # joueur = combinaison[0]
+       # print (joueur)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -131,15 +151,6 @@ class Combinaison:
         for i in range(self.n):
             self.resultat = self.resultat + [choice([0, 1, 2, 3, 4, 5])]  # variante de randint(1,6)
         return self.resultat
-
-
-
-
-
-
-
-
-
 
 
     def __str__(self): # **** a completer ****
