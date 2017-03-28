@@ -19,8 +19,6 @@ class Joueur:
             nom (str): Le nom du joueur.
         """
         self.nom = nom
-        print (type(self.nom))
-        print (self.nom)
         self.nb_victoire = 0
         self.nb_partie_jouees = 0
 
@@ -48,7 +46,7 @@ class Joueur:
             nb_lancer += 1
             if nb_lancer != self.limite_lancers:
                 entre_utilisateur = input(
-                    "\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
+                    "Quel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
                 des_choisi = Combinaison._convert(self, entre_utilisateur, ',')
 
                 if des_choisi != [0]:

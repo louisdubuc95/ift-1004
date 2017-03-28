@@ -34,11 +34,11 @@ class Partie:
 
         ordre_aleatoire = Partie._determiner_ordre(self)
         if len(self.joueurs) == 1 :
-            print("L'ordre aléatoire sera  : {0}".format(ordre_aleatoire[0]))
+            print("\nL'ordre aléatoire sera  : {0}\n".format(ordre_aleatoire[0]))
         elif len(self.joueurs) == 2 :
-            print("L'ordre aléatoire sera  : {0}, {1}".format(ordre_aleatoire[0],ordre_aleatoire[1]))
+            print("\nL'ordre aléatoire sera  : {0}, {1}\n".format(ordre_aleatoire[0],ordre_aleatoire[1]))
         elif len(self.joueurs) == 3 :
-            print("L'ordre aléatoire sera  : {0}, {1} et {2}".format(ordre_aleatoire[0],ordre_aleatoire[1],ordre_aleatoire[2]))
+            print("\nL'ordre aléatoire sera  : {0}, {1} et {2}\n".format(ordre_aleatoire[0],ordre_aleatoire[1],ordre_aleatoire[2]))
 
 #   Début de la boucle simulant une partie pour chaque joueurs
 
@@ -46,7 +46,7 @@ class Partie:
             i+=1
 
             if i == 1 :
-                print ("C'est au tour du joueur : {0}".format(ordre_aleatoire[0]))
+                print ("C'est au tour de {0}\n".format(ordre_aleatoire[0]))
                 c1 = [0, 0, 0, 0, 0]
                 Combinaison.des = c1
 
@@ -92,7 +92,7 @@ class Partie:
 
             elif i == 2 :
 
-                 print("C'est au tour du joueur : {0}".format(ordre_aleatoire[1]))
+                 print("C'est au tour de {0}\n".format(ordre_aleatoire[1]))
 
                  c1 = [0, 0, 0, 0, 0]
                  Combinaison.des = c1
@@ -133,7 +133,7 @@ class Partie:
                             nb_lancer_2 = nb_lancer_1
 
             elif i == 3 :
-                 print("C'est au tour du joueur : {0}".format(ordre_aleatoire[2]))
+                 print("C'est au tour de {0}\n".format(ordre_aleatoire[2]))
 
                  c1 = [0, 0, 0, 0, 0]
                  Combinaison.des = c1
@@ -192,25 +192,13 @@ class Partie:
             joueurs_combinaison = [[ordre_aleatoire[0], ordre_aleatoire[1]], [terminer_1, terminer_2]]
             c1 = Combinaison.determiner_meilleur_combinaison(joueurs_combinaison)
             rep = Partie.convertir_combi(self,c1[1])
-            print("Joueur {0} gagne {1}".format(c1[0],rep))
+            print("Joueur {0} gagne avec la combinaison {1}".format(c1[0],rep))
 
         elif len(self.joueurs) == 3:
             joueurs_combinaison =[[ordre_aleatoire[0], ordre_aleatoire[1], ordre_aleatoire[2]], [terminer_1, terminer_2,terminer_3]]
             c1 = Combinaison.determiner_meilleur_combinaison(joueurs_combinaison)
             rep = Partie.convertir_combi(self,c1[1])
-            print("Joueur {0} gagne {1}".format(c1[0],rep))
-
-
-
-
-
-        #  Combinaison.determiner_meilleur_combinaison([xd,xd1,xd2])
-
-
-
-        print(des_joueur_1)
-        print(des_joueur_2)
-        print(des_joueur_3)
+            print("Joueur {0} gagne avec la combinaison {1}".format(c1[0],rep))
 
 
 

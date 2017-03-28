@@ -4,7 +4,7 @@ from partie import Partie
 from joueur import Joueur
 
 if __name__ == "__main__":
-    print("Bienvenue au Poker d'As!")
+    print("Bienvenue au Poker d'As!\n")
     max_joueurs = 3
     min_joueurs = 1
 

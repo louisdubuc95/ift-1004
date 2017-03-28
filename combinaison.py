@@ -61,7 +61,6 @@ class Combinaison:
         codage = [0] * 6
         for i in range(len(Combinaison.des)):
             codage[Combinaison.des[i] - 1] += 1
-        print(codage)
 
 
         trois = 0
@@ -155,7 +154,7 @@ class Combinaison:
                return  combinaison1
 
             elif   combinaison1[1][1] == combinaison1[1][0] :
-                 return " Match null"
+                 return " Match nul"
 
         if len(combinaison1[0]) == 3:
 
@@ -174,7 +173,7 @@ class Combinaison:
                  return combinaison1
 
              else :
-                print("Match null")
+                print("Match nul")
 
 
 
@@ -238,7 +237,7 @@ class Combinaison:
                 lancer[n] = Carte.NEUF
 
 
-        print ("Resultats du lancer actuel:")
+        print ("Resultats du lancer actuel:\n")
         i = 0
         for a in range(len(lancer)):
             i += 1
