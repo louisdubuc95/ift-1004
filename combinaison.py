@@ -151,8 +151,9 @@ class Combinaison:
                combinaison1 = [combinaison1[0][1] , combinaison1[1][1]]
                return  combinaison1
 
-            elif   combinaison1[1][1] == combinaison1[1][0] :
-                 return " Match nul"
+            else :
+                combinaison1 = ["Match null",combinaison1[1][1]]
+                return combinaison1
 
         if len(combinaison1[0]) == 3:
 
@@ -170,8 +171,12 @@ class Combinaison:
                  combinaison1 = [combinaison1[0][2], combinaison1[1][2]]
                  return combinaison1
 
-             else :
-                return "Match null"
+
+             else:
+
+                 combinaison1 = ["Match null", combinaison1[1][1]]
+
+                 return combinaison1
 
 
 

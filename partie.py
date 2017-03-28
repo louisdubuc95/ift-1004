@@ -42,7 +42,7 @@ class Partie:
 
 #   Début de la boucle simulant une partie pour chaque joueurs
 
-        Joueur.jouer_tour(self,1)
+
         while i < len(self.joueurs) :
             i+=1
 
@@ -165,25 +165,6 @@ class Partie:
                             des_joueur_3 = Combinaison.des
                             nb_lancer_3 = nb_lancer_1
 
-        #test = [[ordre_aleatoire[0],ordre_aleatoire[1],ordre_aleatoire[2]],[des_joueur_1,des_joueur_2,des_joueur_3]]
-       # test = [[ordre_aleatoire[0], ordre_aleatoire[1]],[des_joueur_1, des_joueur_2]]
-      #  Combinaison.determiner_meilleur_combinaison(test)
-      #  lol = [Joueur(ordre_aleatoire[0])]
-      #  print (lol)
-       # Combinaison.determiner_meilleur_combinaison(test)
-        #TEMPORAIRE
-       # c1 = Joueur(ordre_aleatoire[0])
-      #  c2 = Joueur(ordre_aleatoire[1])
-        #c3 = Joueur(ordre_aleatoire[2])
-        #xd = c1.__str__()
-        #xd1 = c2.__str__()
-        #xd2 = c3.__str__()
-       # Combinaison.des = des_joueur_1
-
-        #d1 = Combinaison(des_joueur_1)
-     #   xd = d1.__str__()
-      #  print("vrap")
-      #  print(xd)
 
 
 
@@ -202,14 +183,6 @@ class Partie:
 
 
 
-
-        #  Combinaison.determiner_meilleur_combinaison([xd,xd1,xd2])
-
-
-
-        print(des_joueur_1)
-        print(des_joueur_2)
-        print(des_joueur_3)
 
 
 
