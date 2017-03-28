@@ -83,7 +83,4 @@ class Joueur:
         Returns (str): La chaîne de caractères représentant le joueur.
 
         """
-
-
-
         return self.nom

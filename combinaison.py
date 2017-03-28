@@ -70,11 +70,15 @@ class Combinaison:
             if codage[i] == 5:
 
                 quinton = TypeCombinaison.QUINTON
-                return quinton
+                print(quinton)
+                pts_7 = 7
+                return pts_7
 
             elif codage[i] == 4:
                 carre = TypeCombinaison.CARRE
-                return carre
+                print (carre)
+                pts_6 = 6
+                return pts_6
 
             elif codage[i] == 3:
                 trois = trois + 1
@@ -84,27 +88,40 @@ class Combinaison:
 
         if deux == 1 and trois == 1:
             full = TypeCombinaison.FULL
-            return full
+            print(full)
+            pts_5 = 5
+            return pts_5
 
         elif trois == 1 and deux != 1:
             brelan = TypeCombinaison.BRELAN
-            return brelan
+            print(brelan)
+            pts_4 = 4
+
+            return pts_4
 
         elif (codage == [1, 1, 1, 1, 1, 0] or codage == [0, 1, 1, 1, 1, 1]):
             sequence = TypeCombinaison.SEQUENCE
-            return sequence
+            print(sequence)
+            pts_3 = 3
+            return pts_3
 
         elif deux == 2:
             deux_pair = TypeCombinaison.DEUX_PAIRES
-            return deux_pair
+            print(deux_pair)
+            pts_2 = 2
+            return pts_2
 
         elif deux == 1 and trois != 1:
             pair = TypeCombinaison.UNE_PAIRE
-            return pair
+            print (pair)
+            pts_1 = 1
+            return pts_1
 
         else:
             autre = TypeCombinaison.AUTRE
-            return autre
+            print (autre)
+            pts_0 = 0
+            return pts_0
 
 
 
@@ -122,9 +139,42 @@ class Combinaison:
                          l'utilisation souhaitée.
 
         """
-        print(combinaisons)
 
 
+        combinaison1 = combinaisons
+
+
+        if len(combinaison1[0]) == 2 :
+            if combinaison1[1][0]>combinaison1[1][1] :
+              # print("Joueur {0} gagne".format(combinaisons[0][0]))
+                combinaison1 = [combinaison1[0] [0] , combinaison1[1][0]]
+                return combinaison1
+
+            elif combinaison1[1][1] > combinaison1[1][0] :
+               combinaison1 = [combinaison1[0][1] , combinaison1[1][1]]
+               return  combinaison1
+
+            elif   combinaison1[1][1] == combinaison1[1][0] :
+                 return " Match null"
+
+        if len(combinaison1[0]) == 3:
+
+
+             if combinaison1[1][0] > combinaison1[1][1] and combinaison1[1][0] > combinaison1[1][2]:
+               combinaison1 = [combinaison1[0] [0] , combinaison1[1][0]]
+               return combinaison1
+
+
+             elif combinaison1[1][1] > combinaison1[1][0] and combinaison1[1][1] > combinaison1[1][2]:
+                 combinaison1 = [combinaison1[0][1], combinaison1[1][1]]
+                 return combinaison1
+
+             elif combinaison1[1][2] >combinaison1[1][0] and combinaison1[1][2] > combinaison1[1][1]:
+                 combinaison1 = [combinaison1[0][2], combinaison1[1][2]]
+                 return combinaison1
+
+             else :
+                print("Match null")
 
 
 
@@ -194,8 +244,8 @@ class Combinaison:
             i += 1
             print ("Dé numéro {0} : {1}".format(i,lancer[a]))
 
-        print(Combinaison.des)
-        #return lancer
+
+        return lancer
 
 
 
