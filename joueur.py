@@ -19,8 +19,8 @@ class Joueur:
             nom (str): Le nom du joueur.
         """
         self.nom = nom
-        self.nb_victoire = 0
-        self.nb_partie_jouees = 0
+        self.nb_victoires = 0
+        self.nb_parties_jouees = 0
 
 
 
@@ -34,17 +34,37 @@ class Joueur:
         Returns (Combinaison): La combinaison obtenue
 
         """
-
-
-
         self.limite_lancers = limite_lancers
+        self.nb_parties_jouees = self.nb_parties_jouees + 1
+        return Combinaison.des
+        """
+        i = 0
+        Joueur.nb_victoire(1)
+        while i < self.limite_lancers :
 
-        nb_lancer = 0
-        nb_lancer_1 = 0
-        while nb_lancer < self.limite_lancers:
+         print("c'est au tour du joueur : {0}".format(ordre_aleatoire[0]))
+         c1 = [0, 0, 0, 0, 0]
+         Combinaison.des = c1
+
+         c2 = [1, 2, 3, 4, 5]
+         Combinaison.relancer_des(self, c2)
+         Combinaison.__str__(self)
+         nb_lancer = 0
+         nb_lancer_1 = 0
+         while nb_lancer < 3:
 
             nb_lancer += 1
-            if nb_lancer != self.limite_lancers:
+            nb_lancer_1 += 1
+            # print("*****")
+            # print(nb_lancer_1)
+            # print("******")
+            if nb_lancer == 3:
+                des_joueur_1 = Combinaison.des
+                terminer_1 = Combinaison.determiner_type_combinaison(self)
+                #   print (terminer_1)
+
+            elif nb_lancer != 3:
+
                 entre_utilisateur = input(
                     "Quel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
                 des_choisi = Combinaison._convert(self, entre_utilisateur, ',')
@@ -58,10 +78,8 @@ class Joueur:
                     terminer = Combinaison.determiner_type_combinaison(self)
                     print (terminer)
                     des_joueur_1 = Combinaison.des
-                    nb_lancer = self.limite_lancers
-            elif nb_lancer == self.limite_lancers :
-                return
-
+                    nb_lancer = 3
+                    """
     def _convert(self,nombre, virgule):
             """
             Cette definition traduit l'entré de l'utilisateur en liste pour que le programmme puisse s'executer.

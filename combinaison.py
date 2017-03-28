@@ -48,19 +48,17 @@ class Combinaison:
                 Combinaison.des[4:5] = Combinaison._lancer_des(self,1)
 
 
-
-
-
-
     def determiner_type_combinaison(self): # **** a completer ****
         """Détermine le type de la combinaison.
 
         Return (TypeCombinaison): Le type de la combinaison.
+        Nous passons manuellement le type en return .
         """
 
         codage = [0] * 6
         for i in range(len(Combinaison.des)):
             codage[Combinaison.des[i] - 1] += 1
+        print(codage)
 
 
         trois = 0
@@ -142,8 +140,8 @@ class Combinaison:
 
         combinaison1 = combinaisons
 
-
         if len(combinaison1[0]) == 2 :
+
             if combinaison1[1][0]>combinaison1[1][1] :
               # print("Joueur {0} gagne".format(combinaisons[0][0]))
                 combinaison1 = [combinaison1[0] [0] , combinaison1[1][0]]
@@ -173,21 +171,7 @@ class Combinaison:
                  return combinaison1
 
              else :
-                print("Match nul")
-
-
-
-       # joueur = combinaison[0]
-       # print (joueur)
-
-
-
-
-
-
-
-
-
+                return "Match null"
 
 
 

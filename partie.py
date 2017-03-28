@@ -42,6 +42,7 @@ class Partie:
 
 #   Début de la boucle simulant une partie pour chaque joueurs
 
+        Joueur.jouer_tour(self,1)
         while i < len(self.joueurs) :
             i+=1
 
@@ -164,8 +165,6 @@ class Partie:
                             des_joueur_3 = Combinaison.des
                             nb_lancer_3 = nb_lancer_1
 
-
-
         #test = [[ordre_aleatoire[0],ordre_aleatoire[1],ordre_aleatoire[2]],[des_joueur_1,des_joueur_2,des_joueur_3]]
        # test = [[ordre_aleatoire[0], ordre_aleatoire[1]],[des_joueur_1, des_joueur_2]]
       #  Combinaison.determiner_meilleur_combinaison(test)
@@ -198,7 +197,19 @@ class Partie:
             joueurs_combinaison =[[ordre_aleatoire[0], ordre_aleatoire[1], ordre_aleatoire[2]], [terminer_1, terminer_2,terminer_3]]
             c1 = Combinaison.determiner_meilleur_combinaison(joueurs_combinaison)
             rep = Partie.convertir_combi(self,c1[1])
-            print("Joueur {0} gagne avec la combinaison {1}".format(c1[0],rep))
+            print("Joueur {0} gagne {1}".format(c1[0],rep))
+
+
+
+
+
+        #  Combinaison.determiner_meilleur_combinaison([xd,xd1,xd2])
+
+
+
+        print(des_joueur_1)
+        print(des_joueur_2)
+        print(des_joueur_3)
 
 
 

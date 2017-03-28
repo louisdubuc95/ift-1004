@@ -31,12 +31,10 @@ if __name__ == "__main__":
                 "Voulez-vous refaire une partie? (oui/non) ").lower()
         continuer = "oui" in refaire_partie
 
-    for joueur in joueurs:
-        print("{} a gagné {} parties, soit {}%.".format(joueur,"Xd","Fd"))
 
-""" for joueur in joueurs:
+    for joueur in joueurs:
         print("{} a gagné {:d} parties, soit {:.0f}%.".format(joueur,
                                                              joueur.nb_victoires,
                                                              joueur.nb_victoires / joueur.nb_parties_jouees * 100))
-"""
+
 
