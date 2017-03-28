@@ -60,7 +60,7 @@ class Partie:
                     if nb_lancer == 3:
                         des_joueur_1 = Combinaison.des
                         terminer_1 = Combinaison.determiner_type_combinaison(self)
-                        print (terminer_1)
+                     #   print (terminer_1)
 
                     elif nb_lancer != 3 :
 
@@ -74,7 +74,7 @@ class Partie:
 
                         elif(des_choisi) == [0]:
                             terminer_1 = Combinaison.determiner_type_combinaison(self)
-                            print (terminer_1)
+                          #  print (terminer_1)
 
                             des_joueur_1 = Combinaison.des
                             nb_lancer=3
@@ -101,7 +101,7 @@ class Partie:
                     if nb_lancer_2 == nb_lancer_1:
                         des_joueur_2 = Combinaison.des
                         terminer_2 = Combinaison.determiner_type_combinaison(self)
-                        print (terminer_2)
+                       # print (terminer_2)
 
                     elif nb_lancer_2 != nb_lancer_1:
                           entre_utilisateur = input(
@@ -114,7 +114,7 @@ class Partie:
 
                           elif (des_choisi) == [0]:
                             terminer_2 = Combinaison.determiner_type_combinaison(self)
-                            print (terminer_2)
+                          #  print (terminer_2)
                             des_joueur_2 = Combinaison.des
                             nb_lancer_2 = nb_lancer_1
 
@@ -134,7 +134,7 @@ class Partie:
                     if nb_lancer_3 == nb_lancer_1:
                         des_joueur_3 = Combinaison.des
                         terminer_3 = Combinaison.determiner_type_combinaison(self)
-                        print (terminer_3)
+                      #  print (terminer_3)
                     elif nb_lancer_3 != 3:
                         entre_utilisateur = input(
                             "\nQuel(s) dé(s) voulez-vous rejouer (0 pour aucun), entrez la liste ex.(1,5): ")
@@ -146,11 +146,13 @@ class Partie:
 
                         elif (des_choisi) == [0]:
                             terminer_3 = Combinaison.determiner_type_combinaison(self)
-                            print (terminer_3)
+                        #    print (terminer_3)
                             des_joueur_3 = Combinaison.des
                             nb_lancer_3 = nb_lancer_1
 
         #test = [[ordre_aleatoire[0],ordre_aleatoire[1],ordre_aleatoire[2]],[des_joueur_1,des_joueur_2,des_joueur_3]]
+       # test = [[ordre_aleatoire[0], ordre_aleatoire[1]],[des_joueur_1, des_joueur_2]]
+      #  Combinaison.determiner_meilleur_combinaison(test)
       #  lol = [Joueur(ordre_aleatoire[0])]
       #  print (lol)
        # Combinaison.determiner_meilleur_combinaison(test)
@@ -161,33 +163,34 @@ class Partie:
         #xd = c1.__str__()
         #xd1 = c2.__str__()
         #xd2 = c3.__str__()
+       # Combinaison.des = des_joueur_1
 
-        """if len(self.joueurs) == 1 :
-            print("Joueur {0} gagne".format(ordre_aleatoire[0]))
+        #d1 = Combinaison(des_joueur_1)
+     #   xd = d1.__str__()
+      #  print("vrap")
+      #  print(xd)
 
-        elif len(self.joueurs) == 2 :
-            if terminer_1>terminer_1 :
-                print("Joueur {0} gagne".format(ordre_aleatoire[0]))
-            if terminer_1<terminer_2 :
-                print("Joueur {0} gagne".format(ordre_aleatoire[1]))
-            if terminer_1 == terminer_2 :
-                print ("null")
+
+
+        if len(self.joueurs) == 2 :
+            joueurs_combinaison = [[ordre_aleatoire[0], ordre_aleatoire[1]], [terminer_1, terminer_2]]
+            c1 = Combinaison.determiner_meilleur_combinaison(joueurs_combinaison)
+            rep = Partie.convertir_combi(self,c1[1])
+            print("Joueur {0} gagne {1}".format(c1[0],rep))
 
         elif len(self.joueurs) == 3:
-            print("Joueur {0} gagne".format(ordre_aleatoire[0]))
-            print("Joueur {0} gagne".format(ordre_aleatoire[1]))
-            print("Joueur {0} gagne".format(ordre_aleatoire[2]))
-"""
+            joueurs_combinaison =[[ordre_aleatoire[0], ordre_aleatoire[1], ordre_aleatoire[2]], [terminer_1, terminer_2,terminer_3]]
+            c1 = Combinaison.determiner_meilleur_combinaison(joueurs_combinaison)
+            rep = Partie.convertir_combi(self,c1[1])
+            print("Joueur {0} gagne {1}".format(c1[0],rep))
+
+
 
 
 
         #  Combinaison.determiner_meilleur_combinaison([xd,xd1,xd2])
 
 
-        print()
-        print(Partie._determiner_ordre(self))
-        print()
-        print(Combinaison.des)
 
         print(des_joueur_1)
         print(des_joueur_2)
@@ -231,7 +234,28 @@ class Partie:
             results1 = list(map(int, results))
             return results1
 
-
+    def convertir_combi (self,x):
+        """
+        definition local dans la classe
+        :param x:
+        :return:
+        """
+        if x == 0:
+            return "Autre"
+        elif x == 1:
+            return "Une paire"
+        elif x == 2:
+            return "Deux pair"
+        elif x == 3:
+            return "Séquence"
+        elif x == 4:
+            return "Brelan"
+        elif x == 5:
+            return "Full"
+        elif x == 6:
+            return "Carré"
+        elif x == 7:
+            return "Quinton"
 
 
 #***************************
