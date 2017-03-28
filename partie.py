@@ -45,6 +45,7 @@ class Partie:
 
         while i < len(self.joueurs) :
             i+=1
+          #  Joueur.nb_victoires = Joueur.nb_victoires + 1
 
             if i == 1 :
                 print ("C'est au tour de {0}\n".format(ordre_aleatoire[0]))
@@ -172,18 +173,19 @@ class Partie:
             joueurs_combinaison = [[ordre_aleatoire[0], ordre_aleatoire[1]], [terminer_1, terminer_2]]
             c1 = Combinaison.determiner_meilleur_combinaison(joueurs_combinaison)
             rep = Partie.convertir_combi(self,c1[1])
-            print("Joueur {0} gagne avec la combinaison {1}".format(c1[0],rep))
+            if c1[0] != "Match null":
+                print("Joueur {0} gagne avec la combinaison {1}".format(c1[0],rep))
+            elif c1[0] == "Match null":
+                print ("Match null")
 
         elif len(self.joueurs) == 3:
             joueurs_combinaison =[[ordre_aleatoire[0], ordre_aleatoire[1], ordre_aleatoire[2]], [terminer_1, terminer_2,terminer_3]]
             c1 = Combinaison.determiner_meilleur_combinaison(joueurs_combinaison)
             rep = Partie.convertir_combi(self,c1[1])
-            print("Joueur {0} gagne {1}".format(c1[0],rep))
-
-
-
-
-
+            if c1[0] != "Match null":
+                print("Joueur {0} gagne avec la combinaison {1}".format(c1[0],rep))
+            elif c1[0] == "Match null":
+                print ("Match null")
 
 
     def _determiner_ordre(self): # **** a completer ****
